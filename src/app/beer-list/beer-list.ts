@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Beer } from './Beer';
 
 @Component({
   selector: 'app-beer-list',
@@ -7,11 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './beer-list.scss',
 })
 export class BeerListComponent {
-  beer = {
-    "name": "Pale Ale",
-    "type": "Ale",
-    "price": 5.5,
-    "stock": 5,
-    "image": "assets/images/pale.jpg"
+  beer: Beer = {
+    name: "Pale Ale",
+    type: "Ale",
+    price: 5.5,
+    stock: 5,
+    image: "assets/img/pale.jpg"
   }
 }
