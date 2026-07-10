@@ -63,7 +63,7 @@ export class BeerListComponent {
     }
   }
 
-  changeQuantity(event, beer: Beer): void {
+  changeQuantity(event: any, beer: Beer): void {
     console.log(event.target.value);
   }
 }
