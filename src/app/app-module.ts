@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
     BreweryBeers,
     BreweryAbout
   ],
-  imports: [CommonModule, AppRoutingModule, BrowserModule, FormsModule, RouterModule],
+  imports: [CommonModule, AppRoutingModule, BrowserModule, FormsModule, RouterModule.forRoot([])],
   providers: [],
   bootstrap: [AppComponent]
 })
