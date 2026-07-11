@@ -3,6 +3,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strict": false,                        // <-- CAMBIA ESTO A FALSE
+    "strictPropertyInitialization": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,

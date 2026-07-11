@@ -16,12 +16,10 @@
             <td>{{beer.type}}</td>
             <td>{{beer.price | currency}}</td>
             <td><span class="badge text-bg-warning" *ngIf="beer.stock === 0">SIN STOCK</span></td>
-            <td><button class="btn btn-primary btn-sm" (click)="downQuantity(beer)">-</button>
-                <input 
-                type="text" 
-                [(ngModel)]="beer.quantity"
-                (keyup)="changeQuantity($event, beer)">
-                <button class="btn btn-primary btn-sm" (click)="upQuantity(beer)">+</button>
+            <td>
+                <app-input-integer [(quantity)]="beer.quantity" [max]="beer.stock" (maxReached)="maxReached($event)"
+                    *ngIf="beer.stock"></app-input-integer>
+                Cantidad: {{beer.quantity}}
             </td>
         </tr>
 

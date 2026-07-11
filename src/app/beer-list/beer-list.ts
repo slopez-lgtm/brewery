@@ -51,19 +51,7 @@ export class BeerListComponent {
 
   constructor() { }
 
-  upQuantity(beer: Beer): void {
-    if (beer.quantity < beer.stock) {
-      beer.quantity++;
-    }
-  }
-
-  downQuantity(beer: Beer): void {
-    if (beer.quantity > 0) {
-      beer.quantity--;
-    }
-  }
-
-  changeQuantity(event: any, beer: Beer): void {
-    console.log(event.target.value);
+  maxReached(m: string) {
+   alert(m);
   }
 }

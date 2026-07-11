@@ -1,25 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
 import { AppComponent } from './app';
 import { BeerListComponent } from './beer-list/beer-list';
+import { RouterOutlet } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing-module';
 
-import {FormsModule} from '@angular/forms';
+
+import { FormsModule } from '@angular/forms';
 import { BreweryAbout } from './brewery-about/brewery-about';
 import { BreweryBeers } from './brewery-beers/brewery-beers';
 import { RouterModule } from '@angular/router';
+import { InputInteger } from './input-integer/input-integer';
+import { AppRoutingModule } from './app-routing-module';
 
 @NgModule({
   declarations: [
     AppComponent,
     BeerListComponent,
     BreweryBeers,
-    BreweryAbout
+    BreweryAbout,
+    InputInteger
   ],
-  imports: [CommonModule, AppRoutingModule, BrowserModule, FormsModule, RouterModule.forRoot([])],
+  imports: [ BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
