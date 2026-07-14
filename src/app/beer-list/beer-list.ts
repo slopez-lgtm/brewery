@@ -57,6 +57,8 @@ export class BeerListComponent {
     this.cart.addToCart(beer);
     beer.stock -= beer.quantity;
     beer.quantity = 0;
+
+    console.log('1. Click en comprar cerveza:', { name: beer.name, quantity: beer.quantity });
   }
 
   maxReached(m: string) {

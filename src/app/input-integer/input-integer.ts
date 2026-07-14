@@ -40,6 +40,7 @@ export class InputInteger implements OnInit {
 
   changeQuantity(event: any): void {
     console.log(event.target.value);
+    
   }
 }
 

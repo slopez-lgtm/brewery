@@ -1,6 +1,7 @@
-import { Component , OnInit} from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { BeerCartService } from '../beer-cart.service';
 import { Beer } from '../beer-list/Beer';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -9,11 +10,14 @@ import { Beer } from '../beer-list/Beer';
   styleUrl: './cart.scss',
 })
 export class Cart implements OnInit {
-  cartList: Beer[] = [];
+  cartList$: Observable<Beer[]>;
 
   constructor(private cart: BeerCartService) {
-    cart.cartList.subscribe(c => this.cartList = c);
-  }
-  ngOnInit() {
+    this.cartList$ = this.cart.cartList.asObservable()
+  };
+
+  ngOnInit(): void {
   }
 }
+
+

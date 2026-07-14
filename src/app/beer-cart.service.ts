@@ -15,7 +15,9 @@ export class BeerCartService {
 
 
   addToCart(beer: Beer) {
-    let item: Beer = this._cartList.find((v1) => v1.name === beer.name);
+
+    console.log('2A. Servicio recibió cerveza:', beer);
+    let item: Beer = this._cartList.find((v1) => v1.name  == beer.name);
     if (!item) {
       this._cartList.push({ ...beer });
     } else {
