@@ -12,6 +12,7 @@ import { BreweryBeers } from './brewery-beers/brewery-beers';
 import { RouterModule } from '@angular/router';
 import { InputInteger } from './input-integer/input-integer';
 import { AppRoutingModule } from './app-routing-module';
+import { Cart } from './cart/cart';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing-module';
     BeerListComponent,
     BreweryBeers,
     BreweryAbout,
-    InputInteger
+    InputInteger,
+    Cart,
   ],
   imports: [ BrowserModule, FormsModule, AppRoutingModule],
   providers: [],

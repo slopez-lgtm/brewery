@@ -55,6 +55,8 @@ export class BeerListComponent {
 
   addToCart(beer): void {
     this.cart.addToCart(beer);
+    beer.stock -= beer.quantity;
+    beer.quantity = 0;
   }
 
   maxReached(m: string) {
