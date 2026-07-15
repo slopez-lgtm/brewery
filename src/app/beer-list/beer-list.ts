@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Beer } from './Beer';
 import { BeerCartService } from '../beer-cart.service';
+import { BeerDataService } from '../beer-data.service';
 
 @Component({
   selector: 'app-beer-list',
@@ -8,49 +9,17 @@ import { BeerCartService } from '../beer-cart.service';
   templateUrl: './beer-list.html',
   styleUrl: './beer-list.scss',
 })
-export class BeerListComponent {
-  beers: Beer[] = [
-    {
-      name: "Pale Ale",
-      type: "Ale",
-      price: 5.5,
-      stock: 0,
-      image: "assets/img/pale.jpg",
-      clearance: false,
-      quantity: 0
-    },
-    {
-      name: "Lager",
-      type: "Lager",
-      price: 4.0,
-      stock: 0,
-      image: "assets/img/lager.jpg",
-      clearance: false,
-      quantity: 0
-    },
-    {
-      name: "Stout",
-      type: "Stout",
-      price: 6.0,
-      stock: 3,
-      image: "assets/img/stout.jpg",
-      clearance: true,
-      quantity: 0
-    },
-    {
-      name: "Stout",
-      type: "Stout",
-      price: 6.0,
-      stock: 3,
-      image: "assets/img/stout.jpg",
-      clearance: true,
-      quantity: 0
-    }
-  ];
+export class BeerListComponent implements OnInit {
+  beers: Beer[] = [];
 
 
+  constructor(private cart: BeerCartService,
+    private beersDataService: BeerDataService
+  ) { }
 
-  constructor(private cart: BeerCartService) {
+  ngOnInit(): void {
+    this.beersDataService.getAll()
+      .subscribe(beers => this.beers = beers);
   }
 
   addToCart(beer): void {

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app';
 import { BeerListComponent } from './beer-list/beer-list';
 import { RouterOutlet } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { FormsModule } from '@angular/forms';
@@ -23,7 +23,7 @@ import { Cart } from './cart/cart';
     InputInteger,
     Cart,
   ],
-  imports: [ BrowserModule, FormsModule, AppRoutingModule],
+  imports: [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
